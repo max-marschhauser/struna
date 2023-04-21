@@ -1,7 +1,67 @@
+// root scss file, styles :root, *, body and scrollbar
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Lao:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
-	--color-primary: hsl(225, 60%, 50%);
+	// font family
+	--color-primary: hsl(225, 100%, 50%);
+	--color-dark: hsl(225, 100%, 25%);
+	--color-light: hsl(225, 100%, 75%);
+	--color-black: hsl(0, 0%, 0%);
+	--color-white: hsl(0, 0%, 100%);
+	--color-action: hsl(330, 100%, 50%);
+
+	--font-family: "Noto Serif Lao", serif;
+
+	--letter-spacing: 0.05rem;
+	--font-weight-light: 300;
+	--font-weight-bold: 600;
+
+	--font-size-250: 2.5rem;
+	--font-size-225: 2.25rem;
+	--font-size-200: 2rem;
+	--font-size-175: 1.75rem;
+	--font-size-150: 1.5rem;
+	--font-size-125: 1.25rem;
+	--font-size-100: 1rem;
 }
 
-h1 {
-	background-color: var(--color-primary);
+*,
+*::before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+
+	font-family: var(--font-family);
+
+	scroll-behavior: smooth;
+}
+
+::selection {
+	background-color: var(--color-dark);
+
+	color: var(--color-light);
+}
+
+body {
+	background-color: var(--color-dark);
+}
+
+::-webkit-scrollbar {
+	width: 0.75rem;
+
+	&-track {
+		background-color: var(--color-light);
+	}
+
+	&-thumb {
+		background: var(--color-dark);
+
+		&:hover {
+			background: var(--color-action);
+		}
+	}
 }
